@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f5f7f3">
+<title>日本史一問一答</title>
+<style>
+:root{color-scheme:light;--ink:#182522;--muted:#66736d;--paper:#f5f7f3;--card:#fff;--green:#176b52;--green2:#e5f2eb;--line:#dce5de;--orange:#a34b24;--shadow:0 12px 35px #20362c12}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.65}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(100% - 28px,740px);margin:auto;padding:26px 0 50px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.brand{font-size:14px;font-weight:800;letter-spacing:.08em;color:var(--green)}.badge{font-size:12px;color:var(--muted);background:#e9eee9;padding:5px 10px;border-radius:99px}.hero{padding:26px 0 20px}.eyebrow{color:var(--green);font-size:13px;font-weight:800;letter-spacing:.1em}.hero h1{font-size:clamp(30px,7vw,44px);letter-spacing:.02em;line-height:1.2;margin:8px 0}.hero p{color:var(--muted);margin:10px 0 0}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);margin:14px 0}.section-title{font-size:17px;margin:0 0 14px}.modes{display:grid;grid-template-columns:1fr;gap:10px}.btn{border:0;border-radius:14px;padding:14px 18px;font-weight:750;transition:transform .12s,filter .12s}.btn:active{transform:scale(.985)}.primary{background:var(--green);color:white}.secondary{background:var(--green2);color:#15553f}.plain{background:#f0f3f0;color:var(--ink)}.small{padding:9px 13px;font-size:14px}.mode{display:flex;align-items:center;justify-content:space-between;text-align:left;min-height:62px}.mode span:last-child{font-size:20px}.mode small{display:block;color:#d1e8db;font-weight:500}.mode.secondary small{color:var(--muted)}.era-row{padding:12px 0;border-bottom:1px solid var(--line)}.era-row:last-child{border:0;padding-bottom:0}.era-head{display:flex;justify-content:space-between;font-weight:700;font-size:14px}.era-count{color:var(--muted);font-weight:600}.track{height:7px;border-radius:99px;background:#edf1ed;margin-top:8px;overflow:hidden}.fill{height:100%;background:#4ca27e;border-radius:inherit}.subtle{font-size:13px;color:var(--muted)}.screen-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.screen-head h2{margin:0;font-size:21px}.question-meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}.pill{border-radius:99px;background:#edf3ee;padding:4px 10px}.progress-line{height:8px;background:#e7ece7;border-radius:99px;margin:16px 0 22px;overflow:hidden}.progress-line>div{height:100%;background:var(--green);border-radius:inherit;transition:width .25s}.question{font-size:clamp(20px,5vw,27px);line-height:1.6;font-weight:750;margin:0 0 22px}.answer-form{display:flex;gap:9px}.answer-form input{min-width:0;flex:1;border:1px solid #cbd7ce;border-radius:13px;padding:13px 14px;background:white;outline:none}.answer-form input:focus{border-color:var(--green);box-shadow:0 0 0 3px #176b521b}.feedback{margin-top:16px;padding:15px;border-radius:14px}.feedback.correct{background:#e8f4ec;color:#174f37}.feedback.wrong{background:#fbefe9;color:#743719}.feedback strong{display:block;font-size:17px}.feedback .answer{font-size:20px;font-weight:800;margin-top:5px}.feedback-actions{margin-top:14px}.result{text-align:center;padding:12px 2px}.score{font-size:52px;line-height:1.2;color:var(--green);font-weight:850;margin:10px}.result-actions{display:grid;gap:10px;margin-top:24px}.choice-list{display:grid;gap:10px}.choice{display:flex;justify-content:space-between;align-items:center;text-align:left}.empty{text-align:center;padding:24px 4px;color:var(--muted)}.hidden{display:none!important}.footer{text-align:center;color:#87918b;font-size:12px;padding-top:10px}@media(min-width:560px){.wrap{padding-top:36px}.modes{grid-template-columns:repeat(3,1fr)}.mode{display:block}.mode span:last-child{float:right}.mode small{margin-top:4px}.card{padding:26px}.result-actions{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body><main class="wrap"><header class="top"><div class="brand">NIHONSHI · STUDY</div><span class="badge">高校日本史</span></header><div id="app"></div><footer class="footer">学習記録はこの端末のブラウザーに保存されます。</footer></main>
+<script>
+'use strict';
+const QUESTIONS = [
+{"a":"貝塚","aliases":[],"chapter":"縄文","era":"原始・古代","q":"縄文時代の人々が、食料の残りかすなどを捨てた場所を何というか。"},
+{"a":"三内丸山遺跡","aliases":[],"chapter":"縄文","era":"原始・古代","q":"青森県にある、縄文時代の大規模な集落遺跡はどこか。"},
+{"a":"登呂遺跡","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"静岡県にある、弥生時代の環濠集落の遺跡はどこか。"},
+{"a":"吉野ヶ里遺跡","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"佐賀県にある、弥生時代の大規模な環濠集落の遺跡はどこか。"},
+{"a":"光武帝","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"57年、倭奴国の使者に金印「漢委奴国王」を授けた後漢の皇帝は誰か。"},
+{"a":"卑弥呼","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"『魏志』倭人伝に描かれた、邪馬台国を治めた女王は誰か。"},
+{"a":"魏","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"卑弥呼が使者を送り、「親魏倭王」の称号を受けた中国の王朝はどこか。"},
+{"a":"ヤマト政権","aliases":["大和政権"],"chapter":"古墳","era":"原始・古代","q":"3世紀ごろ、畿内を中心に成立したと考えられる連合政権を何というか。"},
+{"a":"大仙陵古墳","aliases":["大山古墳"],"chapter":"古墳","era":"原始・古代","q":"堺市にある、日本最大の前方後円墳（仁徳天皇陵）の正式名称は何か。"},
+{"a":"渡来人","aliases":[],"chapter":"古墳","era":"原始・古代","q":"古墳時代に朝鮮半島や中国から移住し、漢字や須恵器などの技術・文化を伝えた人々を何というか。"},
+{"a":"聖徳太子","aliases":["厩戸王","厩戸皇子"],"chapter":"飛鳥","era":"原始・古代","q":"593年、推古天皇の摂政となり、冠位十二階や十七条の憲法を定めた人物は誰か。"},
+{"a":"冠位十二階","aliases":[],"chapter":"飛鳥","era":"原始・古代","q":"603年に定められた、才能や功績によって位階を与える制度を何というか。"},
+{"a":"小野妹子","aliases":[],"chapter":"飛鳥","era":"原始・古代","q":"607年、隋に派遣された遣隋使の代表的な使者は誰か。"},
+{"a":"大化の改新","aliases":[],"chapter":"律令国家の成立","era":"原始・古代","q":"645年、中大兄皇子らが蘇我氏を滅ぼして始めた政治改革を何というか。"},
+{"a":"中臣鎌足","aliases":["藤原鎌足"],"chapter":"律令国家の成立","era":"原始・古代","q":"大化の改新で中大兄皇子を助け、後に藤原姓を与えられた人物は誰か。"},
+{"a":"大宝律令","aliases":[],"chapter":"律令国家の成立","era":"原始・古代","q":"701年に完成した、律と令をそろえた法典を何というか。"},
+{"a":"国","aliases":["令制国"],"chapter":"律令国家の成立","era":"原始・古代","q":"律令制のもとで地方行政の単位とされ、国司が派遣された区画を何というか。"},
+{"a":"平城京","aliases":[],"chapter":"奈良","era":"原始・古代","q":"710年に都が移された、唐の長安にならって造られた都はどこか。"},
+{"a":"元明天皇","aliases":[],"chapter":"奈良","era":"原始・古代","q":"平城京への遷都を行った天皇は誰か。"},
+{"a":"古事記","aliases":[],"chapter":"奈良","era":"原始・古代","q":"712年に完成した、現存する日本最古の歴史書は何か。"},
+{"a":"日本書紀","aliases":[],"chapter":"奈良","era":"原始・古代","q":"720年に完成した、天武天皇の命で編纂された勅撰の国史は何か。"},
+{"a":"風土記","aliases":[],"chapter":"奈良","era":"原始・古代","q":"713年、各地の地名の由来や産物・伝承を報告させて編纂された書物は何か。"},
+{"a":"班田収授法","aliases":[],"chapter":"奈良","era":"原始・古代","q":"律令制のもとで、戸籍に登録された人々に口分田を分け与える制度を何というか。"},
+{"a":"墾田永年私財法","aliases":[],"chapter":"奈良","era":"原始・古代","q":"743年に出された、新しく開墾した土地の永久私有を認めた法令を何というか。"},
+{"a":"唐招提寺","aliases":[],"chapter":"奈良","era":"原始・古代","q":"754年に来日した唐の僧・鑑真が、奈良に開いた寺はどこか。"},
+{"a":"盧舎那仏","aliases":["るしゃな仏","毘盧遮那仏"],"chapter":"奈良","era":"原始・古代","q":"聖武天皇の発願で東大寺に造られた大仏の正式な名称は何か。"},
+{"a":"桓武天皇","aliases":[],"chapter":"平安","era":"原始・古代","q":"794年に平安京へ遷都した天皇は誰か。"},
+{"a":"坂上田村麻呂","aliases":[],"chapter":"平安","era":"原始・古代","q":"桓武天皇に初代の征夷大将軍に任命され、蝦夷の征討で活躍した人物は誰か。"},
+{"a":"菅原道真","aliases":[],"chapter":"平安","era":"原始・古代","q":"894年、遣唐使の廃止を建議した学者は誰か。"},
+{"a":"摂関政治","aliases":[],"chapter":"平安","era":"原始・古代","q":"平安時代中期、藤原氏が天皇の外戚として摂政・関白の地位を独占した政治を何というか。"},
+{"a":"縄文土器","aliases":[],"chapter":"縄文","era":"原始・古代","q":"縄文時代の土器で、表面に縄を転がしてつけた文様がある土器を何というか。"},
+{"a":"竪穴住居","aliases":["たて穴住居","竪穴式住居"],"chapter":"縄文","era":"原始・古代","q":"縄文時代の代表的な住まいで、地面を掘りくぼめ、柱を立てて屋根をかけた住居を何というか。"},
+{"a":"土偶","aliases":[],"chapter":"縄文","era":"原始・古代","q":"縄文時代に作られた、主に女性をかたどった素焼きの人形を何というか。"},
+{"a":"水稲耕作","aliases":["水稲農耕"],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"弥生時代に大陸から伝わった、水田で稲を栽培する農耕を何というか。"},
+{"a":"高床倉庫","aliases":["高床式倉庫"],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"弥生時代に収穫物を蓄えるために建てられた、床を高くした倉庫を何というか。"},
+{"a":"弥生土器","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"弥生時代の土器で、縄文土器より薄手で赤褐色の土器を何というか。"},
+{"a":"倭国大乱","aliases":[],"chapter":"弥生・大陸との交渉","era":"原始・古代","q":"2世紀の終わりごろ、倭国で長く続いたとされる大きな争乱を何というか。"},
+{"a":"埴輪","aliases":[],"chapter":"古墳","era":"原始・古代","q":"古墳の上や周囲に並べられた、人物や動物などをかたどった素焼きの器物を何というか。"},
+{"a":"須恵器","aliases":[],"chapter":"古墳","era":"原始・古代","q":"古墳時代に渡来人が伝えた製法で作られた、ろくろを使い高温で焼いた灰色の硬い土器を何というか。"},
+{"a":"大王","aliases":[],"chapter":"古墳","era":"原始・古代","q":"古墳時代、ヤマト政権の王を指した称号を何というか。"},
+{"a":"三角縁神獣鏡","aliases":[],"chapter":"古墳","era":"原始・古代","q":"魏の皇帝から贈られたとされ、各地の古墳から多く出土する、縁の断面が三角形の鏡を何というか。"},
+{"a":"推古天皇","aliases":[],"chapter":"飛鳥","era":"原始・古代","q":"日本最初の女性天皇で、聖徳太子を摂政とした天皇は誰か。"},
+{"a":"仏教","aliases":[],"chapter":"飛鳥","era":"原始・古代","q":"6世紀中ごろ、百済の王から仏像や経典が贈られて日本に伝えられた宗教は何か。"},
+{"a":"法隆寺","aliases":["斑鳩寺"],"chapter":"飛鳥","era":"原始・古代","q":"聖徳太子と蘇我馬子が創建し、現存する世界最古級の木造建築がある、奈良県斑鳩町の寺はどこか。"},
+{"a":"遣隋使","aliases":[],"chapter":"飛鳥","era":"原始・古代","q":"大陸の制度や文化を直接取り入れるため、隋へ派遣された使節を何というか。"},
+{"a":"壬申の乱","aliases":[],"chapter":"律令国家の成立","era":"原始・古代","q":"672年、天智天皇の死後に大友皇子と大海人皇子が皇位を争った内乱を何というか。"},
+{"a":"藤原京","aliases":[],"chapter":"律令国家の成立","era":"原始・古代","q":"694年に都が移された、日本最初の本格的な都城はどこか。"},
+{"a":"公地公民","aliases":[],"chapter":"律令国家の成立","era":"原始・古代","q":"大化の改新で示された、すべての土地と人民は国家（天皇）のものとする方針を何というか。"},
+{"a":"調","aliases":[],"chapter":"奈良","era":"原始・古代","q":"律令制の税のうち、地方の特産物や布などを都へ納めた税を何というか。"},
+{"a":"国分寺","aliases":[],"chapter":"奈良","era":"原始・古代","q":"741年、聖武天皇の詔によって国ごとに建てられた官寺を何というか。"},
+{"a":"正倉院","aliases":[],"chapter":"奈良","era":"原始・古代","q":"東大寺の大仏開眼の宝物などが収められた、校倉造の倉庫を何というか。"},
+{"a":"天平文化","aliases":[],"chapter":"奈良","era":"原始・古代","q":"奈良時代、天平年間を中心に栄えた、唐の影響を受けた仏教色の濃い文化を何というか。"},
+{"a":"万葉集","aliases":[],"chapter":"奈良","era":"原始・古代","q":"奈良時代に編まれた、現存する日本最古の歌集は何か。"},
+{"a":"最澄","aliases":[],"chapter":"平安","era":"原始・古代","q":"唐で天台宗を学び、比叡山に延暦寺を開いた僧は誰か。"},
+{"a":"空海","aliases":[],"chapter":"平安","era":"原始・古代","q":"唐で密教を学び、高野山に金剛峯寺を開いた僧は誰か。"},
+{"a":"国風文化","aliases":[],"chapter":"平安","era":"原始・古代","q":"遣唐使の廃止後、日本の風土に合った独自の文化として10世紀ごろに栄えた文化を何というか。"},
+{"a":"仮名文字","aliases":["仮名","かな文字"],"chapter":"平安","era":"原始・古代","q":"漢字をもとにして作られた、日本独自の表音文字を何というか。"},
+{"a":"古今和歌集","aliases":["古今集"],"chapter":"平安","era":"原始・古代","q":"905年に編纂された、最初の勅撰和歌集は何か。"},
+{"a":"藤原良房","aliases":[],"chapter":"平安","era":"原始・古代","q":"866年、人臣として初めて摂政となった藤原氏の人物は誰か。"},
+{"a":"鳳凰堂","aliases":["平等院鳳凰堂"],"chapter":"平安","era":"原始・古代","q":"藤原頼通が宇治に建てた平等院の中心建物で、阿弥陀如来をまつる建物を何というか。"}
+];
+const STORAGE_KEY='nihonshi-itto:results:v1';
+const app=document.getElementById('app');
+let records=loadRecords(),session=null;
+function loadRecords(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');return x&&typeof x==='object'&&!Array.isArray(x)?x:{}}catch{return {}}}
+function saveRecords(){localStorage.setItem(STORAGE_KEY,JSON.stringify(records))}
+function recordFor(q){const r=records[q];return r&&typeof r==='object'?r:{}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function seededShuffle(items,seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}let state=h>>>0;const rand=()=>{state=(state+0x6D2B79F5)>>>0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296};const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function home(){session=null;const eras=[...new Set(QUESTIONS.map(x=>x.era))];const missed=QUESTIONS.filter(x=>recordFor(x.q).status==='wrong');app.innerHTML=`<section class="hero"><div class="eyebrow">DAILY HISTORY PRACTICE</div><h1>日本史一問一答</h1><p>一問ずつ答えて、知識を積み上げよう。</p></section><section class="card"><h2 class="section-title">学習モード</h2><div class="modes"><button class="btn primary mode" id="today"><span>今日の10問<small>日替わりチャレンジ</small></span><span>→</span></button><button class="btn secondary mode" id="eraMode"><span>時代から選ぶ<small>範囲を決めて学習</small></span><span>→</span></button><button class="btn secondary mode" id="wrongMode"><span>間違えた問題<small>${missed.length}問を復習</small></span><span>→</span></button></div></section><section class="card"><h2 class="section-title">時代ごとの進捗</h2>${eras.map(era=>{const qs=QUESTIONS.filter(q=>q.era===era),done=qs.filter(q=>recordFor(q.q).status==='correct').length;return `<div class="era-row"><div class="era-head"><span>${esc(era)}</span><span class="era-count">${done} / ${qs.length}問</span></div><div class="track"><div class="fill" style="width:${qs.length?done/qs.length*100:0}%"></div></div></div>`}).join('')}</section>`;document.getElementById('today').onclick=()=>{const date=new Date(),key=`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;start(seededShuffle(QUESTIONS,key).slice(0,10),'今日の10問')};document.getElementById('eraMode').onclick=showEras;document.getElementById('wrongMode').onclick=()=>{const qs=QUESTIONS.filter(q=>recordFor(q.q).status==='wrong');if(!qs.length){empty('間違えた問題はありません。', 'ホームへ戻る');return}start(seededShuffle(qs,randomSeed()),'間違えた問題')}}
+function randomSeed(){return `${Date.now()}-${Math.random()}`}
+function showEras(){const eras=[...new Set(QUESTIONS.map(q=>q.era))];app.innerHTML=`<div class="screen-head"><h2>時代を選ぶ</h2><button class="btn plain small" id="backHome">ホーム</button></div><section class="card choice-list">${eras.map(e=>`<button class="btn secondary choice" data-era="${esc(e)}"><span>${esc(e)}</span><span>→</span></button>`).join('')}</section>`;document.getElementById('backHome').onclick=home;app.querySelectorAll('[data-era]').forEach(b=>b.onclick=()=>showChapters(b.dataset.era))}
+function showChapters(era){const chapters=[...new Set(QUESTIONS.filter(q=>q.era===era).map(q=>q.chapter))];app.innerHTML=`<div class="screen-head"><h2>${esc(era)} <span class="subtle">› 章を選ぶ</span></h2><button class="btn plain small" id="backEra">戻る</button></div><section class="card choice-list">${chapters.map(c=>{const n=QUESTIONS.filter(q=>q.era===era&&q.chapter===c).length;return `<button class="btn secondary choice" data-chapter="${esc(c)}"><span>${esc(c)}<small class="subtle">　${n}問</small></span><span>→</span></button>`}).join('')}</section>`;document.getElementById('backEra').onclick=showEras;app.querySelectorAll('[data-chapter]').forEach(b=>b.onclick=()=>start(seededShuffle(QUESTIONS.filter(q=>q.era===era&&q.chapter===b.dataset.chapter),randomSeed()),`${era} · ${b.dataset.chapter}`))}
+function start(qs,title){session={items:qs,index:0,correct:0,title,answered:false};renderQuestion()}
+function renderQuestion(){const s=session;if(!s||s.index>=s.items.length){showResult();return}const q=s.items[s.index];s.answered=false;app.innerHTML=`<div class="screen-head"><h2>${esc(s.title)}</h2><button class="btn plain small" id="quit">ホーム</button></div><section class="card"><div class="question-meta"><span class="pill">${s.index+1} / ${s.items.length}</span><span class="pill">正解 ${s.correct}問</span><span>${esc(q.era)} · ${esc(q.chapter)}</span></div><div class="progress-line"><div style="width:${s.index/s.items.length*100}%"></div></div><p class="question">${esc(q.q)}</p><form class="answer-form" id="answerForm"><input id="answerInput" type="text" placeholder="答えを入力" autocomplete="off" autocapitalize="off" aria-label="答え"><button class="btn primary" type="submit">答える</button></form><div id="feedback"></div></section>`;document.getElementById('quit').onclick=home;document.getElementById('answerForm').onsubmit=e=>{e.preventDefault();submitAnswer()};document.getElementById('answerInput').focus()}
+function normalize(s){return String(s).normalize('NFKC').trim().replace(/[\u3041-\u3096]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60))}
+function submitAnswer(){if(session.answered)return;const q=session.items[session.index],input=document.getElementById('answerInput'),accepted=[q.a,...q.aliases].map(normalize),correct=accepted.includes(normalize(input.value));session.answered=true;if(correct){session.correct++;records[q.q]={status:'correct'};saveRecords()}else{records[q.q]={status:'wrong'};saveRecords()}input.disabled=true;document.querySelector('#answerForm button').disabled=true;const box=document.getElementById('feedback');box.className=`feedback ${correct?'correct':'wrong'}`;box.innerHTML=correct?'<strong>正解！</strong>':'<strong>不正解</strong><div class="answer">正解：'+esc(q.a)+'</div>';box.insertAdjacentHTML('beforeend',`<div class="feedback-actions"><button class="btn ${correct?'primary':'secondary'}" id="next">${session.index+1===session.items.length?'結果を見る':'次の問題へ'} →</button></div>`);document.getElementById('next').onclick=()=>{session.index++;renderQuestion()}}
+function showResult(){const s=session,rate=s.items.length?Math.round(s.correct/s.items.length*100):0;app.innerHTML=`<section class="card result"><div class="eyebrow">SESSION COMPLETE</div><h2>おつかれさま！</h2><div class="score">${s.correct}<span style="font-size:20px;color:var(--muted)"> / ${s.items.length}問</span></div><p>正答率 <strong>${rate}%</strong></p><p class="subtle">${esc(s.title)}</p><div class="result-actions"><button class="btn primary" id="again">もう一度</button><button class="btn plain" id="homeBtn">ホームへ</button></div></section>`;document.getElementById('again').onclick=()=>start(seededShuffle(s.items,randomSeed()),s.title);document.getElementById('homeBtn').onclick=home}
+function empty(message,button){app.innerHTML=`<section class="card empty"><p>${esc(message)}</p><button class="btn primary" id="emptyHome">${esc(button)}</button></section>`;document.getElementById('emptyHome').onclick=home}
+home();
+</script></body></html>
